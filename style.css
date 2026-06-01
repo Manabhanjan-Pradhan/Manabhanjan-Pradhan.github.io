@@ -8,9 +8,9 @@
     --text-secondary: #475569; /* Slate 600 */
     --border: #e2e8f0; /* Slate 200 */
     --font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.05), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
-    --shadow-hover: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.04), 0 4px 6px -2px rgba(15, 23, 42, 0.02);
+    --shadow-hover: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 10px 10px -5px rgba(15, 23, 42, 0.03);
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    line-height: 1.6;
+    line-height: 1.65;
     overflow-x: hidden;
 }
 
@@ -55,14 +55,14 @@ header {
 }
 
 .logo {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 800;
     color: var(--text-primary);
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    letter-spacing: -0.025em;
+    gap: 0.1rem;
+    letter-spacing: -0.03em;
     text-transform: lowercase;
 }
 
@@ -81,7 +81,7 @@ header {
     color: var(--text-secondary);
     text-decoration: none;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition);
 }
 
@@ -101,7 +101,7 @@ header {
 .btn-nav:hover {
     background: var(--primary-hover);
     transform: translateY(-1px);
-    box-shadow: 0 4px 6px -1px rgba(13, 148, 136, 0.2);
+    box-shadow: 0 4px 10px rgba(13, 148, 136, 0.25);
 }
 
 /* Hero Section */
@@ -112,6 +112,7 @@ header {
     align-items: center;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
 .hero::after {
@@ -121,7 +122,7 @@ header {
     right: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(13, 148, 136, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(13, 148, 136, 0.08) 0%, rgba(255, 255, 255, 0) 70%);
     z-index: -1;
     border-radius: 50%;
 }
@@ -133,7 +134,7 @@ header {
     left: -10%;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.03) 0%, rgba(255, 255, 255, 0) 70%);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
     z-index: -1;
     border-radius: 50%;
 }
@@ -143,17 +144,18 @@ header {
     margin: 0 auto;
     width: 100%;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.25fr 0.75fr;
     gap: 4rem;
     align-items: center;
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 3.75rem;
     font-weight: 800;
-    line-height: 1.15;
-    margin-bottom: 1rem;
-    letter-spacing: -0.025em;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
 }
 
 .hero-content h1 span {
@@ -165,14 +167,16 @@ header {
     font-weight: 600;
     color: var(--text-primary);
     margin-bottom: 1.5rem;
-    opacity: 0.9;
+    opacity: 0.95;
+    letter-spacing: -0.01em;
 }
 
 .hero-description {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.75rem;
     max-width: 640px;
+    line-height: 1.7;
 }
 
 .hero-actions {
@@ -185,7 +189,7 @@ header {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.8rem 2rem;
+    padding: 0.85rem 2.2rem;
     font-size: 1rem;
     font-weight: 600;
     border-radius: 8px;
@@ -203,7 +207,7 @@ header {
 .btn-primary:hover {
     background: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(13, 148, 136, 0.25);
+    box-shadow: 0 10px 20px -3px rgba(13, 148, 136, 0.3);
 }
 
 .btn-secondary {
@@ -252,22 +256,23 @@ header {
 }
 
 .profile-hex-content h3 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     margin-bottom: 0.5rem;
     color: var(--primary);
     font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .profile-hex-content p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    font-weight: 500;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 /* Breadcrumbs Styling */
 .breadcrumb {
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--primary);
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -284,7 +289,7 @@ header {
 
 /* Sections Common Styles */
 section {
-    padding: 6rem 2rem;
+    padding: 7rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -298,15 +303,16 @@ section {
 }
 
 .section-header h2 {
-    font-size: 2.25rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.03em;
+    color: var(--text-primary);
 }
 
 .section-header p {
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
 }
 
 /* About Section */
@@ -321,11 +327,14 @@ section {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: var(--text-primary);
+    font-weight: 700;
+    letter-spacing: -0.02em;
 }
 
 .about-text p {
     color: var(--text-secondary);
     margin-bottom: 1.5rem;
+    font-size: 1.05rem;
 }
 
 .interests-list {
@@ -340,7 +349,7 @@ section {
     align-items: center;
     gap: 0.75rem;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .interest-item span {
@@ -366,12 +375,12 @@ section {
 
 .metric-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(13, 148, 136, 0.4);
+    border-color: rgba(13, 148, 136, 0.3);
     box-shadow: var(--shadow-hover);
 }
 
 .metric-val {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     font-weight: 800;
     color: var(--primary);
     line-height: 1;
@@ -381,7 +390,7 @@ section {
 .metric-lbl {
     color: var(--text-secondary);
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Publications */
@@ -402,7 +411,7 @@ section {
 
 .pub-card:hover {
     transform: translateY(-2px);
-    border-color: rgba(13, 148, 136, 0.4);
+    border-color: rgba(13, 148, 136, 0.3);
     box-shadow: var(--shadow-hover);
 }
 
@@ -419,24 +428,26 @@ section {
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .pub-date {
     color: var(--text-secondary);
     font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .pub-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.35rem;
+    font-weight: 800;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .pub-author {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 0.75rem;
 }
 
@@ -461,7 +472,7 @@ section {
 .skills-category {
     background: var(--surface);
     border: 1px solid var(--border);
-    padding: 2rem;
+    padding: 2.25rem 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
 }
@@ -472,7 +483,7 @@ section {
     color: var(--primary);
     border-bottom: 2px solid var(--border);
     padding-bottom: 0.5rem;
-    font-weight: 700;
+    font-weight: 750;
 }
 
 .skills-list {
@@ -484,10 +495,10 @@ section {
 .skill-tag {
     background: var(--background);
     border: 1px solid var(--border);
-    padding: 0.4rem 0.9rem;
+    padding: 0.45rem 1rem;
     border-radius: 6px;
     font-size: 0.9rem;
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition);
 }
 
@@ -507,7 +518,7 @@ section {
 .portfolio-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    padding: 2rem;
+    padding: 2.25rem 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
     transition: var(--transition);
@@ -518,52 +529,82 @@ section {
 
 .portfolio-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(13, 148, 136, 0.4);
+    border-color: rgba(13, 148, 136, 0.3);
     box-shadow: var(--shadow-hover);
 }
 
 .portfolio-info h3 {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     margin-bottom: 0.75rem;
     color: var(--text-primary);
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .portfolio-info p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .portfolio-tech {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.75rem;
 }
 
 .portfolio-tech span {
     background: var(--background);
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 600;
     padding: 0.2rem 0.5rem;
     border-radius: 4px;
     color: var(--text-secondary);
     border: 1px solid var(--border);
 }
 
-.portfolio-link {
-    color: var(--primary);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    display: inline-flex;
+/* Live Pages and View Code Links Layout */
+.portfolio-links {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 0.5rem;
-    transition: var(--transition);
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+    margin-top: auto;
 }
 
-.portfolio-link:hover {
-    color: var(--primary-hover);
+.portfolio-links a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.portfolio-link.code-link {
+    color: var(--text-secondary);
+}
+
+.portfolio-link.code-link:hover {
+    color: var(--primary);
+}
+
+.portfolio-link.download-btn {
+    background: rgba(13, 148, 136, 0.08);
+    color: var(--primary);
+    padding: 0.4rem 0.85rem;
+    border-radius: 6px;
+    border: 1px solid rgba(13, 148, 136, 0.15);
+}
+
+.portfolio-link.download-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
 }
 
 /* Contact Section */
@@ -579,14 +620,17 @@ section {
 }
 
 .contact-info h3 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .contact-info p {
     color: var(--text-secondary);
     margin-bottom: 2rem;
+    font-size: 1.05rem;
 }
 
 .contact-details {
@@ -625,7 +669,7 @@ section {
 .contact-detail-item div p {
     color: var(--text-primary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
     transition: var(--transition);
 }
 
@@ -647,7 +691,7 @@ section {
 
 .form-group label {
     font-size: 0.85rem;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-secondary);
 }
 
@@ -673,7 +717,7 @@ section {
 /* Footer */
 footer {
     border-top: 1px solid var(--border);
-    padding: 3rem 2rem;
+    padding: 3.5rem 2rem;
     background: #ffffff;
 }
 
@@ -688,6 +732,7 @@ footer {
 .footer-copyright {
     color: var(--text-secondary);
     font-size: 0.9rem;
+    font-weight: 500;
 }
 
 .footer-socials {
@@ -697,10 +742,10 @@ footer {
 
 .footer-socials a {
     color: var(--text-secondary);
-    font-size: 1.25rem;
+    font-size: 1rem;
     transition: var(--transition);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .footer-socials a:hover {
