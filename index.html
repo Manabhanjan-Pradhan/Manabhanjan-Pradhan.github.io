@@ -324,7 +324,9 @@
             <h2>Mobile Applications</h2>
             <p>Showcase of newly developed secured Android apps integrated with SMS verification systems</p>
         </div>
-        <div class="portfolio-grid">
+        
+        <div class="portfolio-carousel-wrapper" id="portfolioCarouselWrapper">
+            <div class="portfolio-grid">
             
             <!-- App 1 -->
             <div class="portfolio-card reveal stagger-1">
@@ -482,7 +484,18 @@
                 </div>
             </div>
 
-        </div>
+            </div> <!-- Close portfolio-grid -->
+            
+            <div class="carousel-controls">
+                <button class="carousel-btn prev-btn" id="carouselPrevBtn" aria-label="Previous App">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+                </button>
+                <div class="carousel-dots" id="carouselDots"></div>
+                <button class="carousel-btn next-btn" id="carouselNextBtn" aria-label="Next App">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </div>
+        </div> <!-- Close portfolio-carousel-wrapper -->
     </section>
 
     <!-- Contact Section -->
@@ -1064,6 +1077,142 @@
                     behavior: 'smooth'
                 });
             });
+        }
+
+        // 3D Coverflow Carousel Logic
+        const initCarousel = () => {
+            const wrapper = document.getElementById('portfolioCarouselWrapper');
+            const grid = wrapper ? wrapper.querySelector('.portfolio-grid') : null;
+            const cards = grid ? Array.from(grid.querySelectorAll('.portfolio-card')) : [];
+            const dotsContainer = document.getElementById('carouselDots');
+            const prevBtn = document.getElementById('carouselPrevBtn');
+            const nextBtn = document.getElementById('carouselNextBtn');
+            
+            if (!wrapper || !grid || cards.length === 0) return;
+            
+            let activeIndex = 2; // Start with the middle card (PackPerfect) active
+            const totalCards = cards.length;
+            
+            // Create navigation dots dynamically
+            if (dotsContainer) {
+                dotsContainer.innerHTML = '';
+                cards.forEach((_, index) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('carousel-dot');
+                    if (index === activeIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        activeIndex = index;
+                        updateCarousel();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
+            
+            // Update carousel positions
+            const updateCarousel = () => {
+                cards.forEach((card, index) => {
+                    card.classList.remove('active', 'prev', 'next', 'hidden-left', 'hidden-right');
+                    
+                    let diff = index - activeIndex;
+                    // Adjust for circular wrap-around
+                    if (diff < -2) diff += totalCards;
+                    if (diff > 2) diff -= totalCards;
+                    
+                    if (diff === 0) {
+                        card.classList.add('active');
+                    } else if (diff === 1) {
+                        card.classList.add('next');
+                    } else if (diff === 2) {
+                        card.classList.add('hidden-right');
+                    } else if (diff === -1) {
+                        card.classList.add('prev');
+                    } else if (diff === -2) {
+                        card.classList.add('hidden-left');
+                    }
+                });
+                
+                // Update active dot
+                if (dotsContainer) {
+                    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                    dots.forEach((dot, index) => {
+                        if (index === activeIndex) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
+            };
+            
+            // Navigation controls
+            const rotateCarousel = (direction) => {
+                activeIndex = (activeIndex + direction + totalCards) % totalCards;
+                updateCarousel();
+            };
+            
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => rotateCarousel(-1));
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => rotateCarousel(1));
+            }
+            
+            // Click card directly to focus it
+            cards.forEach((card, index) => {
+                card.addEventListener('click', (e) => {
+                    // Only navigate if the card is not already active
+                    if (index !== activeIndex) {
+                        // Prevent link clicks from triggering card rotation
+                        const isLink = e.target.closest('.portfolio-link');
+                        if (!isLink) {
+                            e.preventDefault();
+                            activeIndex = index;
+                            updateCarousel();
+                        }
+                    }
+                });
+            });
+            
+            // Touch Swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            wrapper.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            wrapper.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const threshold = 50;
+                if (touchStartX - touchEndX > threshold) {
+                    rotateCarousel(1); // Swipe left -> next
+                } else if (touchEndX - touchStartX > threshold) {
+                    rotateCarousel(-1); // Swipe right -> prev
+                }
+            }, { passive: true });
+            
+            // Keyboard accessibility
+            wrapper.setAttribute('tabindex', '0');
+            wrapper.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    rotateCarousel(-1);
+                } else if (e.key === 'ArrowRight') {
+                    rotateCarousel(1);
+                }
+            });
+            
+            // Enable carousel mode visual style
+            wrapper.classList.add('carousel-active');
+            
+            // Initialize positions
+            updateCarousel();
+        };
+        
+        // Initialize carousel on load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCarousel);
+        } else {
+            initCarousel();
         }
     </script>
 

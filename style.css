@@ -590,6 +590,204 @@ section {
     box-shadow: var(--shadow-hover);
 }
 
+/* Carousel Wrapper and 3D Rotation Styling */
+.portfolio-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    overflow: visible;
+    outline: none;
+}
+
+.portfolio-carousel-wrapper.carousel-active .portfolio-grid {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 480px;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    overflow: visible;
+}
+
+.portfolio-carousel-wrapper.carousel-active .portfolio-card {
+    position: absolute;
+    width: 380px;
+    height: 440px;
+    margin: 0;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.6s ease, box-shadow 0.6s ease, border-color 0.6s ease;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+
+/* 3D Positions */
+/* Active Card in Center */
+.portfolio-carousel-wrapper.carousel-active .portfolio-card.active {
+    transform: translate3d(0, 0, 0) scale(1) rotateY(0deg);
+    opacity: 1;
+    z-index: 10;
+    pointer-events: auto;
+    border-color: var(--primary);
+    box-shadow: 0 15px 35px rgba(13, 148, 136, 0.2), 0 0 20px rgba(13, 148, 136, 0.1);
+}
+
+.portfolio-carousel-wrapper.carousel-active .portfolio-card.active:hover {
+    transform: translate3d(0, -8px, 20px) scale(1.02);
+    box-shadow: 0 20px 45px rgba(13, 148, 136, 0.3), 0 0 25px rgba(13, 148, 136, 0.2);
+}
+
+/* Previous Card (Flanking Left) */
+.portfolio-carousel-wrapper.carousel-active .portfolio-card.prev {
+    transform: translate3d(-75%, 0, -150px) scale(0.85) rotateY(30deg);
+    opacity: 0.6;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+/* Next Card (Flanking Right) */
+.portfolio-carousel-wrapper.carousel-active .portfolio-card.next {
+    transform: translate3d(75%, 0, -150px) scale(0.85) rotateY(-30deg);
+    opacity: 0.6;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+/* Far Left Hidden Card */
+.portfolio-carousel-wrapper.carousel-active .portfolio-card.hidden-left {
+    transform: translate3d(-140%, 0, -250px) scale(0.7) rotateY(45deg);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Far Right Hidden Card */
+.portfolio-carousel-wrapper.carousel-active .portfolio-card.hidden-right {
+    transform: translate3d(140%, 0, -250px) scale(0.7) rotateY(-45deg);
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Responsive Styles for Tablet and Mobile devices */
+@media (max-width: 1024px) {
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card {
+        width: 340px;
+        height: 440px;
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card.prev {
+        transform: translate3d(-60%, 0, -120px) scale(0.85) rotateY(25deg);
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card.next {
+        transform: translate3d(60%, 0, -120px) scale(0.85) rotateY(-25deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-carousel-wrapper.carousel-active .portfolio-grid {
+        height: 480px;
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card {
+        width: 290px;
+        height: 450px;
+        padding: 1.75rem 1rem;
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card.prev {
+        transform: translate3d(-40%, 0, -180px) scale(0.8) rotateY(20deg);
+        opacity: 0.45;
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card.next {
+        transform: translate3d(40%, 0, -180px) scale(0.8) rotateY(-20deg);
+        opacity: 0.45;
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card.hidden-left {
+        transform: translate3d(-80%, 0, -250px) scale(0.6) rotateY(30deg);
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card.hidden-right {
+        transform: translate3d(80%, 0, -250px) scale(0.6) rotateY(-30deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card {
+        width: 260px;
+        height: 450px;
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card.prev {
+        transform: translate3d(-30%, 0, -200px) scale(0.75) rotateY(15deg);
+    }
+    .portfolio-carousel-wrapper.carousel-active .portfolio-card.next {
+        transform: translate3d(30%, 0, -200px) scale(0.75) rotateY(-15deg);
+    }
+}
+
+/* Controls (Buttons & Dots) Styling */
+.carousel-controls {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2.5rem;
+    width: 100%;
+}
+
+.portfolio-carousel-wrapper.carousel-active .carousel-controls {
+    display: flex;
+}
+
+.carousel-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    box-shadow: var(--shadow);
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(13, 148, 136, 0.3);
+}
+
+.carousel-btn:active {
+    transform: scale(0.95);
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background: var(--primary);
+    width: 28px;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(13, 148, 136, 0.5);
+}
+
 .portfolio-info h3 {
     font-size: 1.35rem;
     margin-bottom: 0.75rem;
