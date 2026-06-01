@@ -457,12 +457,13 @@
                         <span style="font-size: 32px; filter: drop-shadow(0 2px 8px rgba(0, 245, 212, 0.3));">🛡️</span>
                         <h3 style="margin-bottom: 0;">SecureSentinel</h3>
                     </div>
-                    <p>A premium real-time mobile antivirus scanner. Features installed package permission diagnostics, active threat quarantine, Wi-Fi security auditing, and localized SMS OTP authorization.</p>
+                    <p>A premium real-time mobile antivirus scanner. Features full storage recursive signature scanning, direct authentication gateway, sandboxed private threat quarantine, and risk-based dynamic threat sorting.</p>
                     <div class="portfolio-tech">
                         <span>Kotlin</span>
                         <span>Compose UI</span>
-                        <span>Package Manager</span>
-                        <span>SMS Gateway</span>
+                        <span>Full Storage Scan</span>
+                        <span>Sandbox Quarantine</span>
+                        <span>Dynamic Sorting</span>
                     </div>
                 </div>
                 <div class="portfolio-links">
@@ -553,14 +554,14 @@
                     <div class="sim-header">
                         <div class="icon">🔐</div>
                         <h3>Login Verification</h3>
-                        <p>Please enter your 10-digit mobile number to verify your identity</p>
+                        <p>Please enter your 10-digit mobile number to login securely</p>
                     </div>
                     <div class="sim-input-group">
                         <label for="sim-phone">Phone Number</label>
                         <input type="tel" id="sim-phone" placeholder="9439276467" maxlength="10">
                         <div class="sim-error" id="login-error">Please enter a valid 10-digit mobile number</div>
                     </div>
-                    <button class="sim-btn" onclick="sendSimulatedOtp()">Send Verification OTP</button>
+                    <button class="sim-btn" onclick="sendSimulatedOtp()">Login & Continue</button>
                 </div>
                 
                 <!-- 3. OTP VERIFICATION SCREEN -->
@@ -792,19 +793,13 @@
             
             errorDiv.style.display = 'none';
             
-            // Generate random OTP code
-            generatedOtp = Math.floor(1000 + Math.random() * 9000).toString();
-            
             // Show toast notification
-            showToast(`OTP is ${generatedOtp} (Sent via Local Gateway)`);
+            showToast('Login Successful!');
             
-            // Update labels
-            document.getElementById('otp-phone-lbl').innerText = `Code sent to +91${phone}`;
-            
-            // Transition to OTP screen
+            // Transition directly to the app main screen bypassing OTP
             setTimeout(() => {
-                showScreen('screen-otp');
-            }, 1200);
+                showScreen(`screen-main-${currentApp}`);
+            }, 1000);
         }
 
         function verifySimulatedOtp() {
