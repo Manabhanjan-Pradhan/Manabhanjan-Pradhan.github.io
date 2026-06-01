@@ -7,10 +7,41 @@
     <meta name="description" content="Academic & Professional Portfolio of Dr. Manabhanjan Pradhan, Research Scientist at CAMS Pvt Ltd and PhD graduate from NIT Rourkela. Specializing in Information Security, Cryptography, Blockchain, IoMT, and Machine Learning.">
     <meta name="author" content="Manabhanjan Pradhan">
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
     <!-- Google Fonts Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- OpenGraph Metadata -->
+    <meta property="og:title" content="mann | Dr. Manabhanjan Pradhan - Research Scientist & Cloud Security Engineer">
+    <meta property="og:description" content="Academic & Professional Portfolio of Dr. Manabhanjan Pradhan, Research Scientist at CAMS Pvt Ltd. PhD graduate from NIT Rourkela specializing in Information Security, Cryptography, Blockchain, and IoMT.">
+    <meta property="og:type" content="profile">
+    <meta property="og:url" content="https://manabhanjan-pradhan.github.io/">
+    <meta property="og:image" content="https://manabhanjan-pradhan.github.io/assets/images/desimix_logo.png">
+
+    <!-- JSON-LD Structured Data Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Manabhanjan Pradhan",
+      "jobTitle": "Research Scientist & Cloud Security Engineer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "CAMS Pvt Ltd"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "National Institute of Technology Rourkela"
+      },
+      "url": "https://manabhanjan-pradhan.github.io/",
+      "sameAs": [
+        "https://www.linkedin.com/in/pradhanmann",
+        "https://github.com/Manabhanjan-Pradhan"
+      ]
+    }
+    </script>
 </head>
 <body>
 
@@ -18,11 +49,17 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo">mann<span>.</span></a>
-            <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </button>
+            <div style="display: flex; align-items: center; gap: 1.25rem;">
+                <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle dark/light mode">
+                    <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+                <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#about" class="active">Introduction</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -199,7 +236,18 @@
                 </div>
                 <h3>A Blockchain-Assisted Multifactor Authentication Protocol for Enhancing IoMT Security</h3>
                 <p class="pub-author"><strong>M. Pradhan</strong> and S. Mohanty</p>
-                <div class="pub-journal">IEEE Internet of Things Journal</div>
+                <div class="pub-journal" style="margin-bottom: 1rem;">IEEE Internet of Things Journal</div>
+                <button class="citation-btn" onclick="toggleCitation(this, 'cite-blockchain')">Show Citation (BibTeX)</button>
+                <div class="citation-drawer" id="cite-blockchain">
+                    <pre><code>@article{pradhan2024blockchain,
+  title={A Blockchain-Assisted Multifactor Authentication Protocol for Enhancing IoMT Security},
+  author={Pradhan, Manabhanjan and Mohanty, Sujata},
+  journal={IEEE Internet of Things Journal},
+  year={2024},
+  publisher={IEEE}
+}</code></pre>
+                    <button class="copy-citation-btn" onclick="copyCitationText('cite-blockchain', this)">Copy to Clipboard</button>
+                </div>
             </div>
 
             <!-- Publication 2 -->
@@ -210,7 +258,18 @@
                 </div>
                 <h3>A Sustainable Mutual Authentication Protocol for IoT-Fog-Cloud Environment</h3>
                 <p class="pub-author">S. Satpathy, S. Mohanty, and <strong>M. Pradhan</strong></p>
-                <div class="pub-journal">Peer-to-Peer Networking and Applications</div>
+                <div class="pub-journal" style="margin-bottom: 1rem;">Peer-to-Peer Networking and Applications</div>
+                <button class="citation-btn" onclick="toggleCitation(this, 'cite-fog')">Show Citation (BibTeX)</button>
+                <div class="citation-drawer" id="cite-fog">
+                    <pre><code>@article{satpathy2024sustainable,
+  title={A Sustainable Mutual Authentication Protocol for IoT-Fog-Cloud Environment},
+  author={Satpathy, Saswat and Mohanty, Sujata and Pradhan, Manabhanjan},
+  journal={Peer-to-Peer Networking and Applications},
+  year={2024},
+  publisher={Springer}
+}</code></pre>
+                    <button class="copy-citation-btn" onclick="copyCitationText('cite-fog', this)">Copy to Clipboard</button>
+                </div>
             </div>
 
         </div>
@@ -742,10 +801,10 @@
             const header = document.querySelector('header');
             if (window.scrollY > 50) {
                 header.style.padding = '0.75rem 2rem';
-                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.background = 'var(--surface)';
             } else {
                 header.style.padding = '1.25rem 2rem';
-                header.style.background = 'rgba(255, 255, 255, 0.85)';
+                header.style.background = 'var(--header-bg)';
             }
             
             const sections = document.querySelectorAll('section');
@@ -782,6 +841,90 @@
                 link.addEventListener('click', () => {
                     mobileNavToggle.classList.remove('active');
                     navLinksList.classList.remove('active');
+                });
+            });
+        }
+
+        // Theme Switcher Logic
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme');
+        
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            if (currentTheme === 'dark') {
+                themeToggleBtn.classList.add('dark');
+            }
+        } else {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (prefersDark) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeToggleBtn.classList.add('dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        }
+        
+        themeToggleBtn.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeToggleBtn.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeToggleBtn.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Citation Exporter Logic
+        function toggleCitation(btn, drawerId) {
+            const drawer = document.getElementById(drawerId);
+            if (drawer) {
+                const isActive = drawer.classList.toggle('active');
+                btn.innerText = isActive ? 'Hide Citation (BibTeX)' : 'Show Citation (BibTeX)';
+            }
+        }
+        
+        function copyCitationText(drawerId, btn) {
+            const drawer = document.getElementById(drawerId);
+            if (drawer) {
+                const codeBlock = drawer.querySelector('code');
+                if (codeBlock) {
+                    navigator.clipboard.writeText(codeBlock.innerText).then(() => {
+                        const originalText = btn.innerText;
+                        btn.innerText = 'Copied!';
+                        btn.style.background = 'var(--primary)';
+                        btn.style.color = '#ffffff';
+                        setTimeout(() => {
+                            btn.innerText = originalText;
+                            btn.style.background = '';
+                            btn.style.color = '';
+                        }, 2000);
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                }
+            }
+        }
+
+        // Accessibility overlay escaping and focus lock support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                const simOverlay = document.getElementById('simulatorOverlay');
+                if (simOverlay && simOverlay.classList.contains('active')) {
+                    exitSimulator();
+                }
+            }
+        });
+
+        // Register PWA service worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').then(reg => {
+                    console.log('ServiceWorker registration successful');
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
                 });
             });
         }

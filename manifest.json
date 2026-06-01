@@ -1,0 +1,16 @@
+{
+  "name": "Dr. Manabhanjan Pradhan Portfolio",
+  "short_name": "mann",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0d9488",
+  "description": "Academic & Professional Portfolio of Dr. Manabhanjan Pradhan, Research Scientist and Cloud Security Engineer.",
+  "icons": [
+    {
+      "src": "assets/images/desimix_logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
