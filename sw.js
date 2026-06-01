@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mann-portfolio-v1';
+const CACHE_NAME = 'mann-portfolio-v2';
 const ASSETS = [
   './',
   './index.html',
@@ -6,7 +6,8 @@ const ASSETS = [
   './assets/images/desimix_logo.png',
   './assets/images/networkanalyzer_logo.png',
   './assets/images/packperfect_logo.png',
-  './assets/images/resumeperfect_logo.png'
+  './assets/images/resumeperfect_logo.png',
+  './assets/images/profile.jpg'
 ];
 
 self.addEventListener('install', e => {
