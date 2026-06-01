@@ -1,0 +1,6 @@
+mobile_apps/
+.antigravitycli/
+sms_gateway.py
+push_to_github.py
+.DS_Store
+*.apk
