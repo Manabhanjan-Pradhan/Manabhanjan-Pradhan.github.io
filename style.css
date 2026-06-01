@@ -50,6 +50,10 @@ body {
     color: var(--text-primary);
 }
 
+p {
+    text-align: justify;
+}
+
 /* Header & Navigation */
 header {
     position: fixed;
