@@ -892,14 +892,12 @@
                 const codeBlock = drawer.querySelector('code');
                 if (codeBlock) {
                     navigator.clipboard.writeText(codeBlock.innerText).then(() => {
-                        const originalText = btn.innerText;
-                        btn.innerText = 'Copied!';
-                        btn.style.background = 'var(--primary)';
-                        btn.style.color = '#ffffff';
+                        const originalText = btn.innerHTML;
+                        btn.innerHTML = `<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+                        btn.classList.add('copied');
                         setTimeout(() => {
-                            btn.innerText = originalText;
-                            btn.style.background = '';
-                            btn.style.color = '';
+                            btn.innerHTML = originalText;
+                            btn.classList.remove('copied');
                         }, 2000);
                     }).catch(err => {
                         console.error('Failed to copy text: ', err);
