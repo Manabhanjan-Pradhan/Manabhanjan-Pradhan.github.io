@@ -484,7 +484,7 @@
                 </div>
             </div>
             
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+            <form class="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" placeholder="Your Name" required>
@@ -668,6 +668,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- Contact Submission Toast Notification -->
+    <div id="contactToast" class="toast-notification">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        <span id="contactToastMsg">Message compiled! Opening email client...</span>
+    </div>
 
     <!-- Phone Simulator Logic Script -->
     <script>
@@ -919,6 +925,39 @@
                 }
             }
         });
+
+        // Contact Form Handling
+        const contactForm = document.querySelector('.contact-form');
+        const contactToast = document.getElementById('contactToast');
+        
+        if (contactForm && contactToast) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const message = document.getElementById('message').value.trim();
+                
+                // Show custom toast notification
+                contactToast.classList.add('active');
+                
+                // Auto-close toast
+                setTimeout(() => {
+                    contactToast.classList.remove('active');
+                }, 4000);
+                
+                // Prefill secure mailto delivery
+                const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+                
+                setTimeout(() => {
+                    window.location.href = `mailto:mannpradhan@pm.me?subject=${subject}&body=${body}`;
+                }, 1000);
+                
+                // Reset form inputs
+                contactForm.reset();
+            });
+        }
 
         // Register PWA service worker
         if ('serviceWorker' in navigator) {
