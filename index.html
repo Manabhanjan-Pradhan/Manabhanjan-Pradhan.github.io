@@ -847,7 +847,12 @@
 
         // Theme Switcher Logic
         const themeToggleBtn = document.getElementById('themeToggle');
-        const currentTheme = localStorage.getItem('theme');
+        let currentTheme = null;
+        try {
+            currentTheme = localStorage.getItem('theme');
+        } catch (e) {
+            console.warn('localStorage access blocked or unavailable: ', e);
+        }
         
         if (currentTheme) {
             document.documentElement.setAttribute('data-theme', currentTheme);
@@ -869,11 +874,15 @@
             if (theme === 'dark') {
                 document.documentElement.setAttribute('data-theme', 'light');
                 themeToggleBtn.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
+                try {
+                    localStorage.setItem('theme', 'light');
+                } catch (e) {}
             } else {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 themeToggleBtn.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
+                try {
+                    localStorage.setItem('theme', 'dark');
+                } catch (e) {}
             }
         });
 
