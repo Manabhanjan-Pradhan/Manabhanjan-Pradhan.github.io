@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mann-portfolio-v6';
+const CACHE_NAME = 'mann-portfolio-v7';
 const ASSETS = [
   './',
   './index.html',
@@ -13,6 +13,8 @@ self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE_NAME).then(cache => {
       return cache.addAll(ASSETS);
+    }).then(() => {
+      return self.skipWaiting();
     })
   );
 });
@@ -27,6 +29,8 @@ self.addEventListener('activate', e => {
           }
         })
       );
+    }).then(() => {
+      return self.clients.claim();
     })
   );
 });
