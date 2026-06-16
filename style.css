@@ -1505,7 +1505,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 968px) {
     .mobile-nav-toggle {
         display: flex;
     }
@@ -1605,6 +1605,12 @@ footer {
         top: 0;
         padding-top: 50px;
     }
+}
+
+.sidebar-bottom {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
 }
 
 /* Theme Toggle Button Widget */
@@ -1834,3 +1840,121 @@ textarea:focus-visible {
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
+
+/* Left Sidebar Navigation Layout for desktop screen sizes */
+main {
+    transition: margin-left 0.3s ease, padding 0.3s ease;
+    padding-top: 80px; /* Accounts for top mobile header */
+}
+
+@media (min-width: 969px) {
+    main {
+        margin-left: 280px;
+        padding-top: 0;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    
+    header {
+        width: 280px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: auto;
+        border-right: 1px solid var(--border);
+        border-bottom: none;
+        background: var(--surface);
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        padding: 3rem 2.25rem;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+    }
+    
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+        width: 100%;
+        margin-top: 4rem;
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+    
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-links a::after {
+        display: none !important; /* Hide horizontal underline */
+    }
+    
+    .nav-links a.active,
+    .nav-links a:hover {
+        color: var(--primary) !important;
+        padding-left: 0.5rem;
+    }
+    
+    .nav-links a.btn-nav {
+        background: var(--primary);
+        color: #ffffff !important;
+        text-align: center;
+        border-radius: 8px;
+        margin-top: 1.5rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .nav-links a.btn-nav:hover {
+        background: var(--primary-hover);
+        transform: translateY(-2px);
+    }
+    
+    .sidebar-bottom {
+        margin-top: auto;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .mobile-nav-toggle {
+        display: none !important;
+    }
+    
+    /* Left align section contents on desktop to balance side-nav */
+    section {
+        padding: 6rem 0;
+        margin: 0;
+        max-width: 1000px;
+    }
+    
+    .section-header {
+        align-items: flex-start;
+        text-align: left;
+        margin-bottom: 3.5rem;
+    }
+}
