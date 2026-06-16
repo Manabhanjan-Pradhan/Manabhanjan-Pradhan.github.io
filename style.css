@@ -532,6 +532,13 @@ section {
     padding: 2.25rem 2rem;
     border-radius: 12px;
     box-shadow: var(--shadow);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.4s ease;
+}
+
+.skills-category:hover {
+    transform: translateY(-6px);
+    border-color: var(--primary);
+    box-shadow: 0 16px 28px -8px rgba(13, 148, 136, 0.2);
 }
 
 .skills-category h3 {
@@ -556,13 +563,39 @@ section {
     border-radius: 6px;
     font-size: 0.9rem;
     font-weight: 600;
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .skill-tag:hover {
-    background: rgba(13, 148, 136, 0.08);
-    border-color: var(--primary);
-    color: var(--primary);
+    background: rgba(13, 148, 136, 0.08) !important;
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+    transform: translateY(-2px) scale(1.05) !important;
+}
+
+/* Staggered Mouse Hover Animations for Desktop Devices */
+@media (hover: hover) {
+    .skills-category .skill-tag {
+        opacity: 0.15;
+        transform: scale(0.9) translateY(8px);
+        filter: blur(1px);
+    }
+    
+    .skills-category:hover .skill-tag {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0);
+    }
+    
+    /* Staggered appearance delays */
+    .skills-category .skill-tag:nth-child(1) { transition-delay: 0.04s; }
+    .skills-category .skill-tag:nth-child(2) { transition-delay: 0.08s; }
+    .skills-category .skill-tag:nth-child(3) { transition-delay: 0.12s; }
+    .skills-category .skill-tag:nth-child(4) { transition-delay: 0.16s; }
+    .skills-category .skill-tag:nth-child(5) { transition-delay: 0.20s; }
+    .skills-category .skill-tag:nth-child(6) { transition-delay: 0.24s; }
+    .skills-category .skill-tag:nth-child(7) { transition-delay: 0.28s; }
+    .skills-category .skill-tag:nth-child(8) { transition-delay: 0.32s; }
 }
 
 /* App Portfolio */
