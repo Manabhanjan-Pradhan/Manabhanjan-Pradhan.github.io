@@ -1172,33 +1172,6 @@ section {
     padding: 1.25rem;
 }
 
-/* DesiMix Simulator GUI */
-.cocktail-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.cocktail-card {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-    border: 1px solid var(--border);
-}
-
-.cocktail-card h5 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.25rem;
-}
-
-.cocktail-card p {
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-}
-
 /* NetworkAnalyzer Simulator GUI */
 .network-list {
     display: flex;

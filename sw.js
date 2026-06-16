@@ -1,9 +1,8 @@
-const CACHE_NAME = 'mann-portfolio-v4';
+const CACHE_NAME = 'mann-portfolio-v5';
 const ASSETS = [
   './',
   './index.html',
   './style.css',
-  './assets/images/desimix_logo.png',
   './assets/images/networkanalyzer_logo.png',
   './assets/images/packperfect_logo.png',
   './assets/images/resumeperfect_logo.png',
