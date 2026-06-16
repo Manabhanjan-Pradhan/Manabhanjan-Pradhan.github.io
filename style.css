@@ -41,6 +41,7 @@ html {
     background-color: var(--background);
     color: var(--text-primary);
     font-family: var(--font);
+    font-size: 90%;
 }
 
 body {
@@ -284,8 +285,8 @@ header {
 }
 
 .profile-hex {
-    width: 320px;
-    height: 320px;
+    width: 20rem;
+    height: 20rem;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 24px;
@@ -1489,8 +1490,8 @@ footer {
     
     .profile-hex {
         transform: rotate(0deg);
-        width: 280px;
-        height: 280px;
+        width: 17.5rem;
+        height: 17.5rem;
     }
     
     .about-grid {
@@ -1514,7 +1515,7 @@ footer {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 280px;
+        width: 17.5rem;
         height: 100vh;
         background: var(--mobile-nav-bg);
         backdrop-filter: blur(16px);
@@ -1849,14 +1850,14 @@ main {
 
 @media (min-width: 969px) {
     main {
-        margin-left: 280px;
+        margin-left: 17.5rem;
         padding-top: 0;
         padding-left: 4rem;
         padding-right: 4rem;
     }
     
     header {
-        width: 280px;
+        width: 17.5rem;
         height: 100vh;
         position: fixed;
         top: 0;
