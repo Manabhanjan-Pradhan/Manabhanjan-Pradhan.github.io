@@ -964,28 +964,69 @@
 
         window.addEventListener('scroll', () => {
             adjustHeaderStyle();
-            
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('.nav-links a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 120) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
         });
 
         window.addEventListener('resize', adjustHeaderStyle);
         adjustHeaderStyle();
+
+        // Single-Page Routing Logic (Individual Pages / Tab switching)
+        function handleRouting() {
+            let hash = window.location.hash;
+            if (hash === '' || hash === '#') {
+                hash = '#about';
+            }
+            
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const sections = document.querySelectorAll('main section');
+            
+            // Map of navbar hash to sections that should be displayed
+            const routeMap = {
+                '#about': ['about', 'skills'],
+                '#experience': ['experience'],
+                '#education': ['education', 'certifications', 'events'],
+                '#publications': ['publications'],
+                '#portfolio': ['portfolio'],
+                '#contact': ['contact']
+            };
+            
+            // Get visible section IDs for current hash (fallback to '#about' if hash not recognized)
+            const activeIds = routeMap[hash] || routeMap['#about'];
+            const activeHash = routeMap[hash] ? hash : '#about';
+            
+            sections.forEach(section => {
+                const id = section.getAttribute('id');
+                if (activeIds.includes(id)) {
+                    section.classList.add('active-page');
+                    // Add active class immediately for reveal animations
+                    section.classList.add('active');
+                    section.querySelectorAll('.reveal').forEach(el => {
+                        el.classList.add('active');
+                    });
+                } else {
+                    section.classList.remove('active-page');
+                }
+            });
+            
+            // Update active state in nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === activeHash) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll back to top on page switch
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+        
+        window.addEventListener('hashchange', handleRouting);
+        
+        // Execute routing immediately on script run
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', handleRouting);
+        } else {
+            handleRouting();
+        }
 
         // Mobile Navigation Hamburger Toggle Logic
         const mobileNavToggle = document.getElementById('mobileNavToggle');

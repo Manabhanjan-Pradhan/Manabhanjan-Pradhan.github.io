@@ -1958,3 +1958,34 @@ main {
         margin-bottom: 3.5rem;
     }
 }
+
+/* Page Routing Styles - Hide sections by default */
+main section {
+    display: none;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main section.active-page {
+    display: block !important;
+    animation: fadeInPage 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Remove top borders for sections when they are the first active page section */
+main section.active-page {
+    border-top: none !important;
+}
+
+/* Add border-top back only for active-page sections that are preceded by another active-page section */
+main section.active-page ~ section.active-page {
+    border-top: 1px solid var(--border) !important;
+}
