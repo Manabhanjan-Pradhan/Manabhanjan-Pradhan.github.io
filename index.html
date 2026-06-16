@@ -419,51 +419,65 @@
             <h2>Technical & Cloud Skills</h2>
             <p>Practical expertise in engineering tools, cloud products, and zero-trust policies</p>
         </div>
-        <div class="skills-grid">
+        <div class="skills-carousel-wrapper">
+            <button class="skills-carousel-btn prev-btn" id="skillsPrevBtn" aria-label="Previous category">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
             
-            <div class="skills-category reveal stagger-1">
-                <h3>Cloud Platforms & Identity</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Google Cloud Platform (GCP)</span>
-                    <span class="skill-tag">Microsoft Azure</span>
-                    <span class="skill-tag">Microsoft Entra ID (Azure AD)</span>
-                    <span class="skill-tag">GCP IAM & PAM</span>
-                    <span class="skill-tag">Conditional Access & MFA</span>
+            <div class="skills-carousel-container">
+                <div class="skills-carousel-track" id="skillsTrack">
+                    
+                    <div class="skills-category reveal stagger-1">
+                        <h3>Cloud Platforms & Identity</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Google Cloud Platform (GCP)</span>
+                            <span class="skill-tag">Microsoft Azure</span>
+                            <span class="skill-tag">Microsoft Entra ID (Azure AD)</span>
+                            <span class="skill-tag">GCP IAM & PAM</span>
+                            <span class="skill-tag">Conditional Access & MFA</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category reveal stagger-2">
+                        <h3>Network, Zero Trust & SASE</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Zscaler ZPA</span>
+                            <span class="skill-tag">CheckPoint Firewall</span>
+                            <span class="skill-tag">Palo Alto Firewall</span>
+                            <span class="skill-tag">GCP Cloud Armor</span>
+                            <span class="skill-tag">VPC Firewall & Org Policy</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category reveal stagger-3">
+                        <h3>Key Management & AI Guardrails</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">GCP KMS</span>
+                            <span class="skill-tag">AWS HSM</span>
+                            <span class="skill-tag">GCP Model Armor</span>
+                            <span class="skill-tag">Prisma AIRS</span>
+                        </div>
+                    </div>
+
+                    <div class="skills-category reveal stagger-4">
+                        <h3>Security Tools & Programming</h3>
+                        <div class="skills-list">
+                            <span class="skill-tag">Wireshark</span>
+                            <span class="skill-tag">Nmap</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <div class="skills-category reveal stagger-2">
-                <h3>Network, Zero Trust & SASE</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Zscaler ZPA</span>
-                    <span class="skill-tag">CheckPoint Firewall</span>
-                    <span class="skill-tag">Palo Alto Firewall</span>
-                    <span class="skill-tag">GCP Cloud Armor</span>
-                    <span class="skill-tag">VPC Firewall & Org Policy</span>
-                </div>
-            </div>
-
-            <div class="skills-category reveal stagger-3">
-                <h3>Key Management & AI Guardrails</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">GCP KMS</span>
-                    <span class="skill-tag">AWS HSM</span>
-                    <span class="skill-tag">GCP Model Armor</span>
-                    <span class="skill-tag">Prisma AIRS</span>
-                </div>
-            </div>
-
-            <div class="skills-category reveal stagger-4">
-                <h3>Security Tools & Programming</h3>
-                <div class="skills-list">
-                    <span class="skill-tag">Wireshark</span>
-                    <span class="skill-tag">Nmap</span>
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">C</span>
-                </div>
-            </div>
-
+            
+            <button class="skills-carousel-btn next-btn" id="skillsNextBtn" aria-label="Next category">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
         </div>
+        
+        <div class="skills-carousel-dots" id="skillsDots"></div>
     </section>
 
     <!-- Mobile Apps Showcase Section -->
@@ -1384,11 +1398,101 @@
             updateCarousel();
         };
         
-        // Initialize carousel on load
+        // 3D coverflow carousel initialization wrapper
+        const startAppCarousel = () => {
+            if (typeof initCarousel === 'function') {
+                initCarousel();
+            }
+        };
+
+        // Technical & Cloud Skills Carousel Logic
+        const initSkillsCarousel = () => {
+            const track = document.getElementById('skillsTrack');
+            const cards = track ? Array.from(track.children) : [];
+            const prevBtn = document.getElementById('skillsPrevBtn');
+            const nextBtn = document.getElementById('skillsNextBtn');
+            const dotsContainer = document.getElementById('skillsDots');
+            
+            if (!track || cards.length === 0) return;
+            
+            let activeIndex = 0;
+            const totalCards = cards.length;
+            
+            const updateCarousel = () => {
+                track.style.transform = `translateX(-${activeIndex * 100}%)`;
+                
+                cards.forEach((card, idx) => {
+                    if (idx === activeIndex) {
+                        card.classList.add('active-slide');
+                        card.querySelectorAll('.skill-tag').forEach(tag => {
+                            tag.style.opacity = '1';
+                            tag.style.transform = 'scale(1) translateY(0)';
+                            tag.style.filter = 'blur(0)';
+                        });
+                    } else {
+                        card.classList.remove('active-slide');
+                        if (window.matchMedia('(hover: hover)').matches) {
+                            card.querySelectorAll('.skill-tag').forEach(tag => {
+                                tag.style.opacity = '';
+                                tag.style.transform = '';
+                                tag.style.filter = '';
+                            });
+                        }
+                    }
+                });
+                
+                if (dotsContainer) {
+                    const dots = dotsContainer.querySelectorAll('.skills-dot');
+                    dots.forEach((dot, idx) => {
+                        dot.classList.toggle('active', idx === activeIndex);
+                    });
+                }
+            };
+            
+            if (dotsContainer) {
+                dotsContainer.innerHTML = '';
+                cards.forEach((_, idx) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('skills-dot');
+                    if (idx === activeIndex) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        activeIndex = idx;
+                        updateCarousel();
+                    });
+                    dotsContainer.appendChild(dot);
+                });
+            }
+            
+            if (prevBtn) {
+                const newPrevBtn = prevBtn.cloneNode(true);
+                prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
+                newPrevBtn.addEventListener('click', () => {
+                    activeIndex = (activeIndex - 1 + totalCards) % totalCards;
+                    updateCarousel();
+                });
+            }
+            if (nextBtn) {
+                const newNextBtn = nextBtn.cloneNode(true);
+                nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+                newNextBtn.addEventListener('click', () => {
+                    activeIndex = (activeIndex + 1) % totalCards;
+                    updateCarousel();
+                });
+            }
+            
+            updateCarousel();
+        };
+
+        // Initialize carousels on page load
+        const initAllCarousels = () => {
+            startAppCarousel();
+            initSkillsCarousel();
+        };
+
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initCarousel);
+            document.addEventListener('DOMContentLoaded', initAllCarousels);
         } else {
-            initCarousel();
+            initAllCarousels();
         }
     </script>
     </main>
