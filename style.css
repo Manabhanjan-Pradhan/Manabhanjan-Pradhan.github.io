@@ -107,12 +107,13 @@ header {
 }
 
 .nav-links a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding: 0.7rem 1.2rem;
     font-size: 0.95rem;
     font-weight: 600;
-    text-align: center;
     border-radius: 8px;
     border: 1px solid var(--border);
     background: var(--surface);
@@ -120,6 +121,18 @@ header {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     text-decoration: none;
     box-shadow: var(--shadow-sm);
+}
+
+.nav-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.65rem;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+.nav-links a:hover .nav-icon {
+    transform: scale(1.1) rotate(5deg);
 }
 
 .nav-links a:hover {
@@ -1536,6 +1549,14 @@ footer {
 
 /* Responsive Web Design */
 @media (max-width: 968px) {
+    section {
+        padding: 4.5rem 1.25rem;
+    }
+    
+    footer {
+        padding: 2.5rem 1.25rem;
+    }
+
     .hero-container {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1964,6 +1985,8 @@ main {
     
     .nav-links a {
         font-size: 1.05rem;
+        justify-content: flex-start;
+        padding: 0.75rem 1.5rem;
     }
     
     .sidebar-bottom {
