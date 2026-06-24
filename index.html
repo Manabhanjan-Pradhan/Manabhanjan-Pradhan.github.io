@@ -45,6 +45,22 @@
 </head>
 <body>
 
+    <!-- Active Theory Style Tech Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-title">mann<span>.</span></div>
+            <div class="preloader-status">INITIALIZING SECURE CONTEXT...</div>
+            <div class="preloader-percentage">00%</div>
+        </div>
+        <div class="preloader-progress-bar">
+            <div class="preloader-progress"></div>
+        </div>
+    </div>
+
+    <!-- Custom Fluid Interactive Cursor -->
+    <div class="custom-cursor-dot"></div>
+    <div class="custom-cursor-circle"></div>
+
     <!-- Header / Navigation -->
     <header>
         <div class="nav-container">
@@ -78,46 +94,54 @@
         <!-- Background Vector Graphics suitable for Cloud Security & Cryptography -->
         <div class="main-vector-bg">
             <!-- Vector 1: Interconnected Circuit Nodes (Top Right) -->
-            <svg class="vector-graphic vector-circuit" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20,100 L60,100 L80,120 L120,120 L140,140 M80,120 L100,100 M60,100 L80,80 L120,80 L140,60" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.25" />
-                <circle cx="20" cy="100" r="4" fill="var(--primary)" opacity="0.3" />
-                <circle cx="60" cy="100" r="4" fill="var(--primary)" opacity="0.3" />
-                <circle cx="80" cy="120" r="4" fill="var(--primary)" opacity="0.3" />
-                <circle cx="120" cy="120" r="4" fill="var(--primary)" opacity="0.3" />
-                <circle cx="100" cy="100" r="4" fill="var(--primary)" opacity="0.3" />
-                <circle cx="80" cy="80" r="4" fill="var(--primary)" opacity="0.3" />
-                <circle cx="120" cy="80" r="4" fill="var(--primary)" opacity="0.3" />
-                <circle cx="140" cy="60" r="4" fill="var(--primary)" opacity="0.3" />
-                <circle cx="140" cy="140" r="4" fill="var(--primary)" opacity="0.3" />
-            </svg>
+            <div class="vector-wrapper vector-circuit-wrap">
+                <svg class="vector-graphic vector-circuit" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20,100 L60,100 L80,120 L120,120 L140,140 M80,120 L100,100 M60,100 L80,80 L120,80 L140,60" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.25" />
+                    <circle cx="20" cy="100" r="4" fill="var(--primary)" opacity="0.3" />
+                    <circle cx="60" cy="100" r="4" fill="var(--primary)" opacity="0.3" />
+                    <circle cx="80" cy="120" r="4" fill="var(--primary)" opacity="0.3" />
+                    <circle cx="120" cy="120" r="4" fill="var(--primary)" opacity="0.3" />
+                    <circle cx="100" cy="100" r="4" fill="var(--primary)" opacity="0.3" />
+                    <circle cx="80" cy="80" r="4" fill="var(--primary)" opacity="0.3" />
+                    <circle cx="120" cy="80" r="4" fill="var(--primary)" opacity="0.3" />
+                    <circle cx="140" cy="60" r="4" fill="var(--primary)" opacity="0.3" />
+                    <circle cx="140" cy="140" r="4" fill="var(--primary)" opacity="0.3" />
+                </svg>
+            </div>
             
             <!-- Vector 2: Shield with Cryptographic Key (Bottom Left) -->
-            <svg class="vector-graphic vector-shield" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M100,30 L160,50 L160,110 C160,150 130,175 100,185 C70,175 40,150 40,110 L40,50 Z" fill="none" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.15" />
-                <circle cx="100" cy="95" r="15" fill="none" stroke="var(--secondary)" stroke-width="1.5" opacity="0.15" />
-                <path d="M100,110 L100,145 L112,145 M100,135 L108,135" fill="none" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round" opacity="0.15" />
-            </svg>
+            <div class="vector-wrapper vector-shield-wrap">
+                <svg class="vector-graphic vector-shield" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100,30 L160,50 L160,110 C160,150 130,175 100,185 C70,175 40,150 40,110 L40,50 Z" fill="none" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.15" />
+                    <circle cx="100" cy="95" r="15" fill="none" stroke="var(--secondary)" stroke-width="1.5" opacity="0.15" />
+                    <path d="M100,110 L100,145 L112,145 M100,135 L108,135" fill="none" stroke="var(--secondary)" stroke-width="1.5" stroke-linecap="round" opacity="0.15" />
+                </svg>
+            </div>
             
             <!-- Vector 3: Cloud Security Nodes (Middle Left) -->
-            <svg class="vector-graphic vector-cloud" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50,130 A30,30 0 0,1 80,75 A45,45 0 0,1 150,90 A25,25 0 0,1 170,130 Z" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" opacity="0.15" />
-                <path d="M100,85 L100,125 M85,100 L115,100" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.1" />
-            </svg>
+            <div class="vector-wrapper vector-cloud-wrap">
+                <svg class="vector-graphic vector-cloud" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,130 A30,30 0 0,1 80,75 A45,45 0 0,1 150,90 A25,25 0 0,1 170,130 Z" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-linejoin="round" opacity="0.15" />
+                    <path d="M100,85 L100,125 M85,100 L115,100" fill="none" stroke="var(--primary)" stroke-width="1.5" opacity="0.1" />
+                </svg>
+            </div>
 
             <!-- Vector 4: Hexagonal Blockchain Network (Middle Right) -->
-            <svg class="vector-graphic vector-blockchain" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <polygon points="100,50 143,75 143,125 100,150 57,125 57,75" fill="none" stroke="var(--primary)" stroke-width="1" opacity="0.15" />
-                <line x1="100" y1="50" x2="100" y2="150" stroke="var(--primary)" stroke-width="0.75" opacity="0.1" />
-                <line x1="57" y1="75" x2="143" y2="125" stroke="var(--primary)" stroke-width="0.75" opacity="0.1" />
-                <line x1="57" y1="125" x2="143" y2="75" stroke="var(--primary)" stroke-width="0.75" opacity="0.1" />
-                <circle cx="100" cy="100" r="5" fill="var(--primary)" opacity="0.2" />
-                <circle cx="100" cy="50" r="4" fill="var(--primary)" opacity="0.2" />
-                <circle cx="143" cy="75" r="4" fill="var(--primary)" opacity="0.2" />
-                <circle cx="143" cy="125" r="4" fill="var(--primary)" opacity="0.2" />
-                <circle cx="100" cy="150" r="4" fill="var(--primary)" opacity="0.2" />
-                <circle cx="57" cy="125" r="4" fill="var(--primary)" opacity="0.2" />
-                <circle cx="57" cy="75" r="4" fill="var(--primary)" opacity="0.2" />
-            </svg>
+            <div class="vector-wrapper vector-blockchain-wrap">
+                <svg class="vector-graphic vector-blockchain" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="100,50 143,75 143,125 100,150 57,125 57,75" fill="none" stroke="var(--primary)" stroke-width="1" opacity="0.15" />
+                    <line x1="100" y1="50" x2="100" y2="150" stroke="var(--primary)" stroke-width="0.75" opacity="0.1" />
+                    <line x1="57" y1="75" x2="143" y2="125" stroke="var(--primary)" stroke-width="0.75" opacity="0.1" />
+                    <line x1="57" y1="125" x2="143" y2="75" stroke="var(--primary)" stroke-width="0.75" opacity="0.1" />
+                    <circle cx="100" cy="100" r="5" fill="var(--primary)" opacity="0.2" />
+                    <circle cx="100" cy="50" r="4" fill="var(--primary)" opacity="0.2" />
+                    <circle cx="143" cy="75" r="4" fill="var(--primary)" opacity="0.2" />
+                    <circle cx="143" cy="125" r="4" fill="var(--primary)" opacity="0.2" />
+                    <circle cx="100" cy="150" r="4" fill="var(--primary)" opacity="0.2" />
+                    <circle cx="57" cy="125" r="4" fill="var(--primary)" opacity="0.2" />
+                    <circle cx="57" cy="75" r="4" fill="var(--primary)" opacity="0.2" />
+                </svg>
+            </div>
         </div>
 
         <!-- About / Introduction Section -->
@@ -415,71 +439,196 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="reveal" style="border-top: 1px solid var(--border);">
+    <section id="skills" class="reveal">
         <div class="section-header">
+            <div class="breadcrumb">portfolio <span>/</span> expertise</div>
             <h2>Technical & Cloud Skills</h2>
-            <p>Practical expertise in engineering tools, cloud products, and zero-trust policies</p>
+            <p>Practical competency levels and application of engineering tools and cloud platforms</p>
         </div>
-        <div class="skills-carousel-wrapper">
-            <button class="skills-carousel-btn prev-btn" id="skillsPrevBtn" aria-label="Previous category">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-            </button>
+        
+        <div class="skills-matrix-container">
+            <!-- Tabs Navigation -->
+            <div class="skills-tabs" role="tablist" aria-label="Skills categories">
+                <button class="skills-tab-btn active" role="tab" aria-selected="true" aria-controls="panel-cloud" id="tab-cloud" onclick="switchSkillsTab('cloud')">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg>
+                    Cloud & Identity
+                </button>
+                <button class="skills-tab-btn" role="tab" aria-selected="false" aria-controls="panel-network" id="tab-network" onclick="switchSkillsTab('network')">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+                    Network & SASE
+                </button>
+                <button class="skills-tab-btn" role="tab" aria-selected="false" aria-controls="panel-crypto" id="tab-crypto" onclick="switchSkillsTab('crypto')">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                    Key Management & AI
+                </button>
+                <button class="skills-tab-btn" role="tab" aria-selected="false" aria-controls="panel-tools" id="tab-tools" onclick="switchSkillsTab('tools')">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                    Tools & Coding
+                </button>
+            </div>
             
-            <div class="skills-carousel-container">
-                <div class="skills-carousel-track" id="skillsTrack">
+            <!-- Tab Panels -->
+            <!-- Panel 1: Cloud & Identity -->
+            <div class="skills-panel active" id="panel-cloud" role="tabpanel" aria-labelledby="tab-cloud">
+                <div class="skills-matrix-grid">
                     
-                    <div class="skills-category reveal stagger-1">
-                        <h3>Cloud Platforms & Identity</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">Google Cloud Platform (GCP)</span>
-                            <span class="skill-tag">Microsoft Azure</span>
-                            <span class="skill-tag">Microsoft Entra ID (Azure AD)</span>
-                            <span class="skill-tag">GCP IAM & PAM</span>
-                            <span class="skill-tag">Conditional Access & MFA</span>
+                    <div class="skill-card reveal stagger-1">
+                        <div class="skill-card-header">
+                            <h4>Google Cloud Platform (GCP)</h4>
+                            <span class="skill-level-badge level-expert">Expert</span>
+                        </div>
+                        <p class="skill-card-desc">Engineered multi-project GCP architecture and IAM policies for 100+ enterprise users at CAMS.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 95%;"></div>
                         </div>
                     </div>
 
-                    <div class="skills-category reveal stagger-2">
-                        <h3>Network, Zero Trust & SASE</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">Zscaler ZPA</span>
-                            <span class="skill-tag">CheckPoint Firewall</span>
-                            <span class="skill-tag">Palo Alto Firewall</span>
-                            <span class="skill-tag">GCP Cloud Armor</span>
-                            <span class="skill-tag">VPC Firewall & Org Policy</span>
+                    <div class="skill-card reveal stagger-2">
+                        <div class="skill-card-header">
+                            <h4>Microsoft Azure & Entra ID</h4>
+                            <span class="skill-level-badge level-proficient">Proficient</span>
+                        </div>
+                        <p class="skill-card-desc">Configured Entra ID (Azure AD) tenants, Single Sign-On (SSO), and Conditional Access policies.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 85%;"></div>
                         </div>
                     </div>
 
-                    <div class="skills-category reveal stagger-3">
-                        <h3>Key Management & AI Guardrails</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">GCP KMS</span>
-                            <span class="skill-tag">AWS HSM</span>
-                            <span class="skill-tag">GCP Model Armor</span>
-                            <span class="skill-tag">Prisma AIRS</span>
+                    <div class="skill-card reveal stagger-3">
+                        <div class="skill-card-header">
+                            <h4>IAM / PAM Configurations</h4>
+                            <span class="skill-level-badge level-expert">Expert</span>
+                        </div>
+                        <p class="skill-card-desc">Aligned enterprise access with Zero Trust, configured Privileged Access Management (PAM).</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 90%;"></div>
                         </div>
                     </div>
-
-                    <div class="skills-category reveal stagger-4">
-                        <h3>Security Tools & Programming</h3>
-                        <div class="skills-list">
-                            <span class="skill-tag">Wireshark</span>
-                            <span class="skill-tag">Nmap</span>
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">C</span>
-                        </div>
-                    </div>
-
+                    
                 </div>
             </div>
             
-            <button class="skills-carousel-btn next-btn" id="skillsNextBtn" aria-label="Next category">
-                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </button>
+            <!-- Panel 2: Network & SASE -->
+            <div class="skills-panel" id="panel-network" role="tabpanel" aria-labelledby="tab-network">
+                <div class="skills-matrix-grid">
+                    
+                    <div class="skill-card reveal stagger-1">
+                        <div class="skill-card-header">
+                            <h4>Zscaler ZPA / ZIA</h4>
+                            <span class="skill-level-badge level-advanced">Advanced</span>
+                        </div>
+                        <p class="skill-card-desc">Designed and implemented Zero Trust secure access service edge (SASE) remote connection profiles.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal stagger-2">
+                        <div class="skill-card-header">
+                            <h4>Firewalls (CheckPoint / Palo Alto)</h4>
+                            <span class="skill-level-badge level-proficient">Proficient</span>
+                        </div>
+                        <p class="skill-card-desc">Implemented stateful packet inspection, NAT translation rules, and secure IPsec VPN gateways.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 80%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal stagger-3">
+                        <div class="skill-card-header">
+                            <h4>GCP Cloud Armor & VPC</h4>
+                            <span class="skill-level-badge level-expert">Expert</span>
+                        </div>
+                        <p class="skill-card-desc">Secured web apps against DDoS attacks and OWASP Top 10 vulnerabilities via strict org firewall policies.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 92%;"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Panel 3: Key Management & AI -->
+            <div class="skills-panel" id="panel-crypto" role="tabpanel" aria-labelledby="tab-crypto">
+                <div class="skills-matrix-grid">
+                    
+                    <div class="skill-card reveal stagger-1">
+                        <div class="skill-card-header">
+                            <h4>GCP KMS & AWS CloudHSM</h4>
+                            <span class="skill-level-badge level-advanced">Advanced</span>
+                        </div>
+                        <p class="skill-card-desc">Managed cryptographic key lifecycles, envelope encryption models, and HSM security boundaries.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 86%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal stagger-2">
+                        <div class="skill-card-header">
+                            <h4>Cryptographic Protocols</h4>
+                            <span class="skill-level-badge level-expert">Expert</span>
+                        </div>
+                        <p class="skill-card-desc">Designed and analyzed mutual authentication protocols using ECC and pairing-based cryptography.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 96%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal stagger-3">
+                        <div class="skill-card-header">
+                            <h4>GCP Model Armor & Prisma AIRS</h4>
+                            <span class="skill-level-badge level-proficient">Proficient</span>
+                        </div>
+                        <p class="skill-card-desc">Configured safety guardrails, prompt filtering, and data leakage protection for GenAI/LLM pipelines.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 82%;"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Panel 4: Tools & Coding -->
+            <div class="skills-panel" id="panel-tools" role="tabpanel" aria-labelledby="tab-tools">
+                <div class="skills-matrix-grid">
+                    
+                    <div class="skill-card reveal stagger-1">
+                        <div class="skill-card-header">
+                            <h4>Wireshark & Nmap</h4>
+                            <span class="skill-level-badge level-advanced">Advanced</span>
+                        </div>
+                        <p class="skill-card-desc">Conducted deep network packet inspection, vulnerability scans, and security protocol audit traces.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 88%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal stagger-2">
+                        <div class="skill-card-header">
+                            <h4>Python & C Programming</h4>
+                            <span class="skill-level-badge level-expert">Expert</span>
+                        </div>
+                        <p class="skill-card-desc">Developed security automation scripts, cryptographic protocol simulators, and tool integrations.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 93%;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-card reveal stagger-3">
+                        <div class="skill-card-header">
+                            <h4>Blockchain & Smart Contracts</h4>
+                            <span class="skill-level-badge level-proficient">Proficient</span>
+                        </div>
+                        <p class="skill-card-desc">Integrated decentralized ledger models for credential verification and secure transaction logging.</p>
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 84%;"></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
         </div>
-        
-        <div class="skills-carousel-dots" id="skillsDots"></div>
-    </section>
 
     <!-- Mobile Apps Showcase Section -->
     <section id="portfolio" class="reveal" style="border-top: 1px solid var(--border);">
@@ -1089,6 +1238,31 @@
             handleRouting();
         }
 
+        // Skills Section Tab Switching Logic
+        function switchSkillsTab(categoryId) {
+            const tabs = document.querySelectorAll('.skills-tab-btn');
+            const panels = document.querySelectorAll('.skills-panel');
+            
+            tabs.forEach(tab => {
+                const isActive = tab.getAttribute('id') === `tab-${categoryId}`;
+                tab.classList.toggle('active', isActive);
+                tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+            
+            panels.forEach(panel => {
+                const isActive = panel.getAttribute('id') === `panel-${categoryId}`;
+                panel.classList.toggle('active', isActive);
+            });
+            
+            // Re-trigger reveal transitions for elements inside active panel
+            const activePanel = document.getElementById(`panel-${categoryId}`);
+            if (activePanel) {
+                activePanel.querySelectorAll('.reveal').forEach(el => {
+                    el.classList.add('active');
+                });
+            }
+        }
+
         // Mobile Navigation Hamburger Toggle Logic
         const mobileNavToggle = document.getElementById('mobileNavToggle');
         const navLinksList = document.getElementById('navLinks');
@@ -1231,6 +1405,166 @@
                 });
             });
         }
+
+        // 1. Preloader Logic
+        const runPreloader = () => {
+            const preloader = document.querySelector('.preloader');
+            const percentEl = document.querySelector('.preloader-percentage');
+            const progressEl = document.querySelector('.preloader-progress');
+            const statusEl = document.querySelector('.preloader-status');
+            
+            if (!preloader || !percentEl || !progressEl) return;
+            
+            document.body.style.overflow = 'hidden';
+            
+            const statuses = [
+                "Connecting secure context...",
+                "Loading cryptographic modules...",
+                "Verifying blockchain integrity...",
+                "Establishing zero trust environment...",
+                "Initializing premium interface..."
+            ];
+            
+            let percent = 0;
+            const interval = setInterval(() => {
+                percent += Math.floor(Math.random() * 4) + 1;
+                if (percent >= 100) {
+                    percent = 100;
+                    clearInterval(interval);
+                    
+                    // Finish loader
+                    percentEl.innerText = "100%";
+                    progressEl.style.width = "100%";
+                    statusEl.innerText = "Decryption Complete.";
+                    
+                    setTimeout(() => {
+                        preloader.classList.add('fade-out');
+                        document.body.style.overflow = '';
+                        
+                        // Trigger hero reveal
+                        document.querySelectorAll('.reveal').forEach(el => {
+                            if (el.id === 'about') {
+                                el.classList.add('active');
+                            }
+                        });
+                    }, 600);
+                } else {
+                    percentEl.innerText = percent.toString().padStart(2, '0') + "%";
+                    progressEl.style.width = percent + "%";
+                    
+                    // Cycle status text
+                    const statusIdx = Math.floor((percent / 100) * statuses.length);
+                    if (statuses[statusIdx]) {
+                        statusEl.innerText = statuses[statusIdx];
+                    }
+                }
+            }, 45);
+        };
+
+        // 2. Custom trailing cursor (Active Theory style)
+        const initCustomCursor = () => {
+            if (window.matchMedia('(pointer: coarse)').matches) return; // Skip on mobile/touch
+            
+            const dot = document.querySelector('.custom-cursor-dot');
+            const circle = document.querySelector('.custom-cursor-circle');
+            
+            if (!dot || !circle) return;
+            
+            let mouseX = 0, mouseY = 0;
+            let circleX = 0, circleY = 0;
+            
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                
+                dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
+            });
+            
+            // Trailing interpolation
+            const updateCirclePos = () => {
+                const ease = 0.15;
+                circleX += (mouseX - circleX) * ease;
+                circleY += (mouseY - circleY) * ease;
+                
+                circle.style.transform = `translate3d(${circleX}px, ${circleY}px, 0) translate(-50%, -50%)`;
+                requestAnimationFrame(updateCirclePos);
+            };
+            requestAnimationFrame(updateCirclePos);
+            
+            // Add hover classes
+            const addCursorHoverEvents = () => {
+                const interactiveElements = document.querySelectorAll('a, button, select, input, textarea, .portfolio-card, .pub-card, .citation-btn, .carousel-arrow, .carousel-dot');
+                
+                interactiveElements.forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        dot.classList.add('hover');
+                        circle.classList.add('hover');
+                    });
+                    
+                    el.addEventListener('mouseleave', () => {
+                        dot.classList.remove('hover');
+                        circle.classList.remove('hover');
+                    });
+                });
+                
+                // Mousedown / click transitions
+                document.addEventListener('mousedown', () => {
+                    circle.classList.add('click');
+                });
+                
+                document.addEventListener('mouseup', () => {
+                    circle.classList.remove('click');
+                });
+            };
+            
+            addCursorHoverEvents();
+            
+            // Re-bind when mutations occur
+            const observer = new MutationObserver(addCursorHoverEvents);
+            observer.observe(document.body, { childList: true, subtree: true });
+        };
+
+        // 3. Mouse Parallax for Background Vectors
+        const initBackgroundParallax = () => {
+            document.addEventListener('mousemove', (e) => {
+                const x = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+                const y = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+                
+                document.documentElement.style.setProperty('--mouse-x', x);
+                document.documentElement.style.setProperty('--mouse-y', y);
+            });
+        };
+
+        // 4. 3D Tilt Card effect
+        const initTiltEffect = () => {
+            if (window.matchMedia('(pointer: coarse)').matches) return;
+            
+            const cards = document.querySelectorAll('.pub-card, .portfolio-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = ((centerY - y) / centerY) * 5; // Max 5 deg
+                    const rotateY = ((x - centerX) / centerX) * 5;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    card.style.transition = 'transform 0.1s ease';
+                });
+                
+                card.style.willChange = 'transform';
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = '';
+                    card.style.transition = 'transform 0.5s ease';
+                });
+            });
+        };
 
         // Viewport scroll reveal observer
         const revealCallback = (entries, observer) => {
@@ -1407,94 +1741,24 @@
             }
         };
 
-        // Technical & Cloud Skills Carousel Logic
-        const initSkillsCarousel = () => {
-            const track = document.getElementById('skillsTrack');
-            const cards = track ? Array.from(track.children) : [];
-            const prevBtn = document.getElementById('skillsPrevBtn');
-            const nextBtn = document.getElementById('skillsNextBtn');
-            const dotsContainer = document.getElementById('skillsDots');
-            
-            if (!track || cards.length === 0) return;
-            
-            let activeIndex = 0;
-            const totalCards = cards.length;
-            
-            const updateCarousel = () => {
-                track.style.transform = `translateX(-${activeIndex * 100}%)`;
-                
-                cards.forEach((card, idx) => {
-                    if (idx === activeIndex) {
-                        card.classList.add('active-slide');
-                        card.querySelectorAll('.skill-tag').forEach(tag => {
-                            tag.style.opacity = '1';
-                            tag.style.transform = 'scale(1) translateY(0)';
-                            tag.style.filter = 'blur(0)';
-                        });
-                    } else {
-                        card.classList.remove('active-slide');
-                        if (window.matchMedia('(hover: hover)').matches) {
-                            card.querySelectorAll('.skill-tag').forEach(tag => {
-                                tag.style.opacity = '';
-                                tag.style.transform = '';
-                                tag.style.filter = '';
-                            });
-                        }
-                    }
-                });
-                
-                if (dotsContainer) {
-                    const dots = dotsContainer.querySelectorAll('.skills-dot');
-                    dots.forEach((dot, idx) => {
-                        dot.classList.toggle('active', idx === activeIndex);
-                    });
-                }
-            };
-            
-            if (dotsContainer) {
-                dotsContainer.innerHTML = '';
-                cards.forEach((_, idx) => {
-                    const dot = document.createElement('div');
-                    dot.classList.add('skills-dot');
-                    if (idx === activeIndex) dot.classList.add('active');
-                    dot.addEventListener('click', () => {
-                        activeIndex = idx;
-                        updateCarousel();
-                    });
-                    dotsContainer.appendChild(dot);
-                });
-            }
-            
-            if (prevBtn) {
-                const newPrevBtn = prevBtn.cloneNode(true);
-                prevBtn.parentNode.replaceChild(newPrevBtn, prevBtn);
-                newPrevBtn.addEventListener('click', () => {
-                    activeIndex = (activeIndex - 1 + totalCards) % totalCards;
-                    updateCarousel();
-                });
-            }
-            if (nextBtn) {
-                const newNextBtn = nextBtn.cloneNode(true);
-                nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
-                newNextBtn.addEventListener('click', () => {
-                    activeIndex = (activeIndex + 1) % totalCards;
-                    updateCarousel();
-                });
-            }
-            
-            updateCarousel();
-        };
-
-        // Initialize carousels on page load
-        const initAllCarousels = () => {
+        // Initialize all premium effects and animations
+        const initPremiumEffects = () => {
+            // Run preloader first
+            runPreloader();
+            // Initialize custom cursor
+            initCustomCursor();
+            // Initialize parallax vectors
+            initBackgroundParallax();
+            // Initialize 3D tilt on cards
+            initTiltEffect();
+            // Initialize carousels
             startAppCarousel();
-            initSkillsCarousel();
         };
 
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initAllCarousels);
+            document.addEventListener('DOMContentLoaded', initPremiumEffects);
         } else {
-            initAllCarousels();
+            initPremiumEffects();
         }
     </script>
     </main>
