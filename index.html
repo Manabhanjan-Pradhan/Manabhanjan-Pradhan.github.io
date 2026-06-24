@@ -1441,6 +1441,11 @@
                         preloader.classList.add('fade-out');
                         document.body.style.overflow = '';
                         
+                        // Fully remove from layout flow after transition completes
+                        setTimeout(() => {
+                            preloader.style.display = 'none';
+                        }, 1200);
+                        
                         // Trigger hero reveal
                         document.querySelectorAll('.reveal').forEach(el => {
                             if (el.id === 'about') {

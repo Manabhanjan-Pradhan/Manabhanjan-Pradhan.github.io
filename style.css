@@ -2230,6 +2230,9 @@ main section.active-page ~ section.active-page {
 
 .preloader.fade-out {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Angled slide up reveal */
+    pointer-events: none;
+    visibility: hidden;
+    transition: clip-path 1.2s cubic-bezier(0.85, 0, 0.15, 1), visibility 1.2s step-end;
 }
 
 .preloader-content {
